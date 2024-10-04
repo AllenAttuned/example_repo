@@ -9,10 +9,11 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
-@app.get("/")
-async def read_root(request: Request):
+@app.get("/{team}")
+async def read_root(request: Request, team: str):
     return templates.TemplateResponse(
         request=request,
-        name="welcome.html"
+        name="welcome.html",
+        context={"team_name": team}
     )
 

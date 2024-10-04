@@ -14,7 +14,18 @@
     const html = htm.bind(h);
 
     function App(props) {
-        return html`<h1>Hello ${props.name}!</h1>`;
+        return html`
+            <h1>Hello ${props.name}!</h1>
+            <${TeamName} teamName={{team_name}} />
+        `;
+    }
+
+    function TeamName({ teamName }) {
+        return html`
+            <div>
+                <strong>${teamName}</strong> is the best team!
+            </div>
+        `
     }
 
     render(html`<${App} name="World" />`, document.body);
