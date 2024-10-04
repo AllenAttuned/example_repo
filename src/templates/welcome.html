@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Item Details</title>
+</head>
+
+<body>
+</body>
+
+<script type="module">
+    import { h, render } from 'https://esm.sh/preact';
+    import htm from 'https://esm.sh/htm';
+
+    const html = htm.bind(h);
+
+    function App(props) {
+        return html`<h1>Hello ${props.name}!</h1>`;
+    }
+
+    render(html`<${App} name="World" />`, document.body);
+</script>
+
+</html>
